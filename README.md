@@ -9,3 +9,6 @@ The code of DSDP is modified to use the input coordinates as the initial guess f
 
 The code of ColabDock is also modified to use the input coordinates as the initial guess for conformation sampling. The output from each iteration is saved, and the second stage (prediction stage) of ColabDock is not run. You can find the instructions for installment of ColabDock from https://github.com/JeffSHF/ColabDock.
 
+
+All the code and test cases will be uploaded shortly... I promise.
+
