@@ -1,0 +1,3 @@
+python fft_opencl.py -p 8qw7_B.pdb -l 8qw7_A.pdb -angs_per_vox 1 -rot_angle 30 -nstruct 100000 -dist 5 -opencl
+
+
