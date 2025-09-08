@@ -15,28 +15,28 @@ The code of ColabDock is also modified to use the input coordinates as the initi
 # Instructions
 The codes and 1 test case 8QW7 were uploaded. Follow the instructions bellow to run the test case:
 
-Step 1:
-Go to folder "FFT Docking/8QW7".
-Use the command in "FFT Docking/8QW7/cmds" to do FFT-based docking for POI and E3.
-python fft_opencl.py -p 8qw7_B.pdb -l 8qw7_A.pdb -angs_per_vox 1 -rot_angle 30 -nstruct 100000 -dist 5 -opencl
--p and -l is used to spicify the POI and E3. The order is irelevant. In this test case, 8qw7_B.pdb is VHL, and 8qw7_A.pdb is POI.
--angs_per_vox is for the distance between grid points. 1 Å is use for this case.
--rot_angle is rotation step. At the beginning of FFT docking, one protein is fixed, the other is rotated about three axixes to generated all possible orientations.
--nstruct is the number of output pose.
--dist is to define the area near pocket.
+Step 1:  
+Go to folder "FFT Docking/8QW7".  
+Use the command in "FFT Docking/8QW7/cmds" to do FFT-based docking for POI and E3.  
+python fft_opencl.py -p 8qw7_B.pdb -l 8qw7_A.pdb -angs_per_vox 1 -rot_angle 30 -nstruct 100000 -dist 5 -opencl  
+-p and -l is used to spicify the POI and E3. The order is irelevant. In this test case, 8qw7_B.pdb is VHL, and 8qw7_A.pdb is POI.  
+-angs_per_vox is for the distance between grid points. 1 Å is use for this case.  
+-rot_angle is rotation step. At the beginning of FFT docking, one protein is fixed, the other is rotated about three axixes to generated all possible orientations.  
+-nstruct is the number of output pose.  
+-dist is to define the area near pocket.  
 
-There is a config.py in folder "FFT Docking/8QW7" containing some other parameters (residues near the pockets, values for diferent types of grid, thresholds that filter out undesired orientations).
+There is a config.py in folder "FFT Docking/8QW7" containing some other parameters (residues near the pockets, values for diferent types of grid, thresholds that filter out undesired orientations).  
 
-Run the following two notebook to align and cluster all the poses: 
-alignment_after_docking.ipynb
-clustering_after_alignment.ipynb
-Move all clustered results to a new folder “ColabDock/8QW7/PROTAC_8QW7_results/FFT_pocket/” for ColabDock resampling.
+Run the following two notebook to align and cluster all the poses:   
+alignment_after_docking.ipynb  
+clustering_after_alignment.ipynb  
+Move all clustered results to a new folder “ColabDock/8QW7/PROTAC_8QW7_results/FFT_pocket/” for ColabDock resampling.  
 
-Step 2:
-Go to folder "ColabDock".
-Run ./batch_run_pullharder_all_clusters.sh
-Go to folder "ColabDock/8QW7". All results will be in "PROTAC_8QW7_results".
-... Not finished
+Step 2:  
+Go to folder "ColabDock".  
+Run ./batch_run_pullharder_all_clusters.sh  
+Go to folder "ColabDock/8QW7". All results will be in "PROTAC_8QW7_results".  
+... Not finished  
 
 
 
