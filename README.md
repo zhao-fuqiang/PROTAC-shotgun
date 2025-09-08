@@ -9,7 +9,10 @@ The code of DSDP is modified to use the input coordinates as the initial guess f
 
 The code of ColabDock is also modified to use the input coordinates as the initial guess for conformation sampling. The output from each iteration is saved, and the second stage (prediction stage) of ColabDock is not run. You can find the instructions for installment of ColabDock from https://github.com/JeffSHF/ColabDock.
 
+# Workflow
+![PROTAC shotgun Workflow](./images/PROTAC_shotgun_workflow.png "workflow")
 
+# Instructions
 The codes and 1 test case 8QW7 were uploaded. Follow the instructions bellow to run the test case:
 
 Step 1:
@@ -24,13 +27,12 @@ python fft_opencl.py -p 8qw7_B.pdb -l 8qw7_A.pdb -angs_per_vox 1 -rot_angle 30 -
 
 There is a config.py in folder "FFT Docking/8QW7" containing some other parameters (residues near the pockets, values for diferent types of grid, thresholds that filter out undesired orientations).
 
-Step 2:
 Run the following two notebook to align and cluster all the poses: 
 alignment_after_docking.ipynb
 clustering_after_alignment.ipynb
 Move all clustered results to a new folder “ColabDock/8QW7/PROTAC_8QW7_results/FFT_pocket/” for ColabDock resampling.
 
-Step 3:
+Step 2:
 Go to folder "ColabDock".
 Run ./batch_run_pullharder_all_clusters.sh
 Go to folder "ColabDock/8QW7". All results will be in "PROTAC_8QW7_results".
