@@ -10,7 +10,7 @@ The code of DSDP is modified to use the input coordinates as the initial guess f
 The code of ColabDock is also modified to use the input coordinates as the initial guess for conformation sampling. The output from each iteration is saved, and the second stage (prediction stage) of ColabDock is not run. You can find the instructions for installment of ColabDock from https://github.com/JeffSHF/ColabDock.
 
 # Workflow
-![PROTAC shotgun Workflow](./images/PROTAC_shotgun_workflow.png "workflow")
+<img src="./images/PROTAC_shotgun_workflow.png" width="600" alt="PROTAC shotgun Workflow">
 
 # Instructions
 The codes and 1 test case 8QW7 were uploaded. Follow the instructions bellow to run the test case:
