@@ -27,7 +27,7 @@ python fft_opencl.py -p 8qw7_B.pdb -l 8qw7_A.pdb -angs_per_vox 1 -rot_angle 30 -
 
 There is a config.py in folder "FFT Docking/8QW7" containing some other parameters (residues near the pockets, values for diferent types of grid, thresholds that filter out undesired orientations).  
 
-Run the following two notebook to align and cluster all the poses:   
+Run the following two notebooks to align and cluster all the poses:  
 alignment_after_docking.ipynb  
 clustering_after_alignment.ipynb  
 Move all clustered results to a new folder “ColabDock/8QW7/PROTAC_8QW7_results/FFT_pocket/” for ColabDock resampling.  
@@ -36,7 +36,27 @@ Step 2:
 Go to folder "ColabDock".  
 Run ./batch_run_pullharder_all_clusters.sh  
 Go to folder "ColabDock/8QW7". All results will be in "PROTAC_8QW7_results".  
-... Not finished  
 
+Run the following script to align all the poses from ColabDock output, and then shake the protein a little to generate more POI-E3 comformations:  
+align_and_perturbate_parallel.py  
+All POI-E3 comformations will be in folder "alignment_for_DSDP".  
 
+Step 3:  
+Run the following script to add linker to build full PROTACs for all POI-E3 complexes:  
+addlinker_after_alignment_after_docking_parallel.py  
+All PROTACs will be in folder "PROTAC_for_DSDP".  
+The mins and maxes of xyz coordinates for all PROTACs are stored in box_info_range(index_low, index_high). They will be used in step 4 to define the box for DSDP.  
+
+Step 4:  
+Run the following notebook to generate a bash script to run DSDP redocking for all POI-PROTAC-E3 complexes:  
+generate_DSDP_script.ipynb  
+The script is named "batch_run_DSDP.sh". This script use the modified version of DSDP to do redocking.  
+All results will be in folder "output_from_DSDP".  
+
+Step 5:  
+Pick the refined POI-PROTAC-E3 complexes based on DSDP score and RMSD.  
+
+Note:  
+What we showed here is just a simple example to demostrate how to take the flexible nature of POI-PROTAC-E3 complex into account when we try to model and design PROTAC.  
+All components of this workflow are replaceble.  
 
