@@ -45,12 +45,12 @@ All POI-E3 comformations will be in folder "alignment_for_DSDP".
 Run the following script to add linker to build full PROTACs for all POI-E3 complexes:  
 **addlinker_after_alignment_after_docking_parallel.py**  
 All PROTACs will be in folder "PROTAC_for_DSDP".  
-The mins and maxes of xyz coordinates for all PROTACs are stored in box_info_range(index_low, index_high). They will be used in step 4 to define the box for DSDP.  
+The min and max values of xyz coordinates for all PROTACs are stored in **box_info_range(index_low, index_high)**. They will be used in step 4 to define the binding site box for DSDP.  
 
 ## Step 4:  
 Run the following notebook to generate a bash script to run DSDP redocking for all POI-PROTAC-E3 complexes:  
 **generate_DSDP_script.ipynb**  
-The script is named "batch_run_DSDP.sh". This script use the modified version of DSDP to do redocking.  
+The script is named "**batch_run_DSDP.sh**". This script use the modified version of DSDP to do redocking.  
 All results will be in folder "output_from_DSDP".  
 
 ## Step 5:  
