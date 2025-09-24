@@ -18,7 +18,9 @@ The codes and 1 test case 8QW7 were uploaded. Follow the instructions bellow to 
 ## Step 1:  
 Go to folder "FFT Docking/8QW7".  
 Use the command in "FFT Docking/8QW7/cmds" to do FFT-based docking for POI and E3.  
-***python fft_opencl.py -p 8qw7_B.pdb -l 8qw7_A.pdb -angs_per_vox 1 -rot_angle 30 -nstruct 100000 -dist 5 -opencl***  
+```
+python fft_opencl.py -p 8qw7_B.pdb -l 8qw7_A.pdb -angs_per_vox 1 -rot_angle 30 -nstruct 100000 -dist 5 -opencl  
+```
 **-p** and **-l** is used to spicify the POI and E3. The order is irelevant. In this test case, 8qw7_B.pdb is VHL, and 8qw7_A.pdb is POI.  
 **-angs_per_vox** is for the distance between grid points. 1 Å is use for this case.  
 **-rot_angle** is rotation step. At the beginning of FFT docking, one protein is fixed, the other is rotated about three axixes to generated all possible orientations.  
